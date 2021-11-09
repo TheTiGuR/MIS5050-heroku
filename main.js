@@ -18,12 +18,7 @@ const express = require('express'),
   coursesController = require('./controllers/coursesController'),
   User = require('./models/user');
 
-mongoose.connect('mongodb+srv://csimiskey:GHUS9feel*bunt9flak@mis5050.gqvcj.mongodb.net/recipe_db', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-}); //ATLAS CONNECTION STRING HERE
+mongoose.connect(process.env.MONGODB_URI); //ATLAS CONNECTION STRING HERE
 
 const db = mongoose.connection;
 
